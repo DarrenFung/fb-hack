@@ -2,20 +2,20 @@
 
 console.log("FB Hack Started Loading");
 
-$('._li').addClass("widget_style");
+$("._li").addClass("widget_style");
+$("._li div").sortable();
+$("._li div").disableSelection();
 
-$("#pagelet_bluebar").sortable();
-$("#pagelet_bluebar").draggable({snap: "#pagelet_dock"});
+$("#pagelet_bluebar").addClass("draggable ui-widget-content");
+$("#pagelet_bluebar").draggable({ snap: "#pagelet_dock", snapMode: "outer" });
 $("#pagelet_bluebar").disableSelection();
 
 $('#rightCol').addClass("widget_style");
-$("#rightCol div").sortable();
-$("#rightCol div").draggable();
+$("#rightCol div").sortable({connectWith: ".widget_style"});
 $("#rightCol div").disableSelection();
 
 $('#leftCol').addClass("widget_style");
-$("#leftCol div").sortable();
-$("#leftCol div").draggable();
+$("#leftCol div").sortable({connectWith: ".widget_style"});
 $("#leftCol div").disableSelection();
 
 console.log("FB Hack Finished Loading");
