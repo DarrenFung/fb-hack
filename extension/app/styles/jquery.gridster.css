@@ -62,6 +62,8 @@
     list-style: none;
 }
 
+.widget_style { list-style-type: none; }
+
 /* Uncomment this if you set helper : "clone" in draggable options */
 /*.gridster .player {
   opacity:0;
