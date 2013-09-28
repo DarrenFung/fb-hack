@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require react
 #= require chart.min
+#= require bootstrap.min
 #= require heatmap
 #= require_tree .
 
@@ -51,12 +52,12 @@ $ ->
     {
       fillColor : "rgba(220,220,220,0.5)"
       strokeColor : "rgba(220,220,220,1)"
-      data : [10,59,90,81,56,55,40]
+      data : [Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70]
     },
     {
       fillColor : "rgba(151,187,205,0.5)"
       strokeColor : "rgba(151,187,205,1)"
-      data : [5,48,40,19,96,27,100]
+      data : [Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70]
     }
   ]
   barChartNF       = $("div.bar-chart-nf")
@@ -65,12 +66,13 @@ $ ->
     {
       fillColor : "rgba(220,220,220,0.5)"
       strokeColor : "rgba(220,220,220,1)"
-      data : [20, 62,58, 30, 2, 3, 6]
+
+      data : [Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70]
     },
     {
       fillColor : "rgba(151,187,205,0.5)"
       strokeColor : "rgba(151,187,205,1)"
-      data : [5,30,66,13,10, 2,0]
+      data : [Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70]
     }
   ]
 
@@ -90,7 +92,3 @@ $ ->
   React.renderComponent(`<BarChart labels={barChartPPLabels} datasets={barChartPPData} />`, barChartPP.get(0))
   React.renderComponent(`<BarChart labels={barChartNFLabels} datasets={barChartNFData} />`, barChartNF.get(0))
 
-  # React.renderComponent(`<HeatMap max="20" data={[
-  #               { x: 10, y: 20, count: 18 },
-  #               { x: 25, y: 25, count: 14 },
-  #               { x: 50, y: 30, count: 20 }]} />`, heatMap.get(0))
