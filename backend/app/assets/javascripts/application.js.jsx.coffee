@@ -75,6 +75,36 @@ $ ->
       data : [Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70]
     }
   ]
+  barChartMenu       = $("div.bar-chart-menu")
+  barChartMenuLabels = ["0-14", "15-24", "25-36", "37-48", "49-60", "60-71", "72+"]
+  barChartMenuData   = [
+    {
+      fillColor : "rgba(220,220,220,0.5)"
+      strokeColor : "rgba(220,220,220,1)"
+
+      data : [Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70]
+    },
+    {
+      fillColor : "rgba(151,187,205,0.5)"
+      strokeColor : "rgba(151,187,205,1)"
+      data : [Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70]
+    }
+  ]
+  barChartSearch       = $("div.bar-chart-search")
+  barChartSearchLabels = ["0-14", "15-24", "25-36", "37-48", "49-60", "60-71", "72+"]
+  barChartSearchData   = [
+    {
+      fillColor : "rgba(220,220,220,0.5)"
+      strokeColor : "rgba(220,220,220,1)"
+
+      data : [Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70]
+    },
+    {
+      fillColor : "rgba(151,187,205,0.5)"
+      strokeColor : "rgba(151,187,205,1)"
+      data : [Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70,Math.floor(Math.random() * 100) % 70]
+    }
+  ]
 
 
   React.renderComponent(`<PieChart data={
@@ -91,4 +121,6 @@ $ ->
 
   React.renderComponent(`<BarChart labels={barChartPPLabels} datasets={barChartPPData} />`, barChartPP.get(0))
   React.renderComponent(`<BarChart labels={barChartNFLabels} datasets={barChartNFData} />`, barChartNF.get(0))
+  React.renderComponent(`<BarChart labels={barChartMenuLabels} datasets={barChartMenuData} />`, barChartMenu.get(0))
+  React.renderComponent(`<BarChart labels={barChartSearchLabels} datasets={barChartSearchData} />`, barChartSearch.get(0))
 
