@@ -35,6 +35,9 @@
       "js": [
         "scripts/jquery-2.0.3.js",
         "scripts/jquery.gridster.js",
+        "scripts/jquery.ui.core.js",
+        "scripts/jquery.ui.widget.js",
+        "scripts/jquery.ui.mouse.js",
         "scripts/jquery.ui.draggable.js",
         "scripts/jquery.ui.droppable.js",
         "scripts/jquery.ui.resizable.js",
