@@ -2,18 +2,17 @@
 
 console.log("FB Hack Started Loading");
 
+
+// pagelet_bluebar
+$("#pagelet_bluebar").attr({'data-row' : '1', 'data-col' : '1', 'data-sizex':'1', 'data-sizey':'1'});
+// pagelet_bluebar
+
+
+// globalContainer
+$("#globalContainer").attr({'data-row' : '2', 'data-col' : '1', 'data-sizex':'1', 'data-sizey':'18'});
+// globalContainer
+
 /*
-// pagelet_bluebar
-$("#pagelet_bluebar").addClass("widget_base");
-$("#pagelet_bluebar").attr({'data-row' : '1', 'data-col' : '1', 'data-sizex':'32', 'data-sizey':'1'});
-// pagelet_bluebar
-
-
-// globalContainer
-$("#globalContainer").addClass("widget_base");
-$("#globalContainer").attr({'data-row' : '2', 'data-col' : '1', 'data-sizex':'32', 'data-sizey':'18'});
-// globalContainer
-
 // composer
 $("#pagelet_composer").addClass("widget_content");
 $("#pagelet_composer").attr({'data-row' : '1', 'data-col' : '1', 'data-sizex':'9', 'data-sizey':'1'});
@@ -23,15 +22,15 @@ $("#pagelet_composer").attr({'data-row' : '1', 'data-col' : '1', 'data-sizex':'9
 $("#pagelet_home_stream").addClass("widget_content");
 $("#pagelet_home_stream").attr({'data-row' : '2', 'data-col' : '1', 'data-sizex':'9', 'data-sizey':'12'});
 // home_stream
+*/
 
-
-$(".widget_base").gridster({
-    widget_margins: [0, 5],
-    widget_base_dimensions: [40, 40],
-    widget_selector: "div",
-    min_cols: 1
+$("._li").gridster({
+    widget_margins: [5, 5],
+    widget_base_dimensions: [1000, 50],
+    widget_selector: "div"
 }).data("gridster");
 
+/*
 $(".widget_content").gridster({
     widget_margins: [0, 5],
     widget_base_dimensions: [60, 60],
@@ -64,27 +63,27 @@ $(".widget_content > div").gridster({
 }).data("gridster");
 */
 
+/*
 // pagelet_reminders
-$("#pagelet_reminders").attr({'data-row' : '1', 'data-col' : '1', 'data-sizex':'24', 'data-sizey':'3'});
+$("#pagelet_reminders").attr({'data-row' : '1', 'data-col' : '1', 'data-sizex':'24', 'data-sizey':'1'});
 // pagelet_reminders
 
 
 // pagelet_ego_pane
-$("#pagelet_ego_pane").attr({'data-row' : '2', 'data-col' : '1', 'data-sizex':'24', 'data-sizey':'56'});
+$("#pagelet_ego_pane").attr({'data-row' : '2', 'data-col' : '1', 'data-sizex':'24', 'data-sizey':'15'});
 // pagelet_ego_pane
 
 // pagelet_rhc_footer
-$("#pagelet_rhc_footer").attr({'data-row' : '3', 'data-col' : '1', 'data-sizex':'9', 'data-sizey':'4'});
+$("#pagelet_rhc_footer").attr({'data-row' : '3', 'data-col' : '1', 'data-sizex':'9', 'data-sizey':'1'});
 // pagelet_rhc_footer
 
 $("#rightCol div").gridster({
     widget_margins: [0, 0],
-    widget_base_dimensions: [10, 10],
+    widget_base_dimensions: [10, 50],
     widget_selector: "div",
-    min_cols: 1,
     avoid_overlapped_widgets: true
 }).data("gridster");
-
+*/
 
 console.log("FB Hack Finished Loading");
 /*
