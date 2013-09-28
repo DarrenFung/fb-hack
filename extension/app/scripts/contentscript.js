@@ -7,7 +7,7 @@ $("._li div").sortable();
 $("._li div").disableSelection();
 
 $("#pagelet_bluebar").addClass("draggable ui-widget-content");
-$("#pagelet_bluebar").draggable({ snap: "#pagelet_dock", snapMode: "outer" });
+$("#pagelet_bluebar").draggable({ snap: "#bottomContent", snapMode: "outer", connectWith: ".widget_style", revert: "invalid"});
 $("#pagelet_bluebar").disableSelection();
 
 $('#rightCol').addClass("widget_style");
