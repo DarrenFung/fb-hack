@@ -56,12 +56,29 @@ var styling = {
 	margin: "10px"
 };
 
+var undoStyling = {
+	border: "none",
+	padding: "0",
+	cursor: "default",
+	margin: "0"
+};
+
 // actually runs on 'edit' button click
 $( document ).ready( function(){
-	addStylings();
+	chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
+		console.log(sender.tab ? "from a content script:" + sender.tab.url : "from the extension");
+		if (request.action == "enter") {
+			sendResponse({farewell: "goodbye"});
+			enterEditMode();
+		}
+		if (request.action == "exit") {
+			sendResponse({farewell: "goodbye"});
+			exitEditMode();
+		}
+	});	
 });
 
-function addStylings () {
+function enterEditMode () {
 	// var iconUrl = chrome.extension.getURL("images/move.png");
 	// var dragThis = '<div class="dragThis"><img src="' + iconUrl + '" /></div>';
 	var dragThis = '<div class="dragThis"> X </div>';
@@ -86,4 +103,11 @@ function addStylings () {
 	};
 
 	$('.dragThis').css(dragThisStyling);
+}
+
+function exitEditMode () {
+	for (var i = 0; i < draggables.length; i++) {
+		$(draggables[i]).css(undoStyling);
+	}
+	$('.dragThis').remove();
 }
