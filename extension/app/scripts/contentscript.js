@@ -46,14 +46,25 @@ var draggables = [
 	"#pinnedNav", // Favorites
 	"#pagesNav",
 	"#groupsNav",
-	"#appsNav"
+	"#appsNav",
+	"#listsNav",
+	"#developerNav",
+	"#interestsNav",
+	"#pagelet_friends_online",
+	"#leftCol",
+	"#rightCol",
+	"#pagelet_reminders",
+	"#pagelet_ego_pane",
+	"#pagelet_rhc_footer",
+	"#pagelet_composer",
+	"pagelet_home_stream"
 ];
 
 var styling = {
-	border: "5px dashed #5A9ED6",
-	padding: "5px",
+	border: "2px dashed #5A9ED6",
+	padding: "0",
 	cursor: "move",
-	margin: "10px"
+	margin: "5px"
 };
 
 var undoStyling = {
