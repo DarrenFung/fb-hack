@@ -35,6 +35,11 @@
       "js": [
         "scripts/jquery-2.0.3.js",
         "scripts/jquery.gridster.js",
+        "scripts/jquery.ui.draggable.js",
+        "scripts/jquery.ui.droppable.js",
+        "scripts/jquery.ui.resizable.js",
+        "scripts/jquery.ui.selectable.js",
+        "scripts/jquery.ui.sortable.js",
         "scripts/contentscript.js"
       ],
       "run_at": "document_end",
