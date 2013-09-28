@@ -41,3 +41,49 @@ pagelet_dock
 ChatTabsPagelet
 BuddylistPagelet
 */
+
+var draggables = [
+	"#pinnedNav", // Favorites
+	"#pagesNav",
+	"#groupsNav",
+	"#appsNav"
+];
+
+var styling = {
+	border: "5px dashed #5A9ED6",
+	padding: "5px",
+	cursor: "move",
+	margin: "10px"
+};
+
+// actually runs on 'edit' button click
+$( document ).ready( function(){
+	addStylings();
+});
+
+function addStylings () {
+	// var iconUrl = chrome.extension.getURL("images/move.png");
+	// var dragThis = '<div class="dragThis"><img src="' + iconUrl + '" /></div>';
+	var dragThis = '<div class="dragThis"> X </div>';
+	// var dragThis = '<div class="dragThis" style="color: white;cursor: move;position: absolute;margin-left: -40px;display: block;background: #03589E;width: 30px;height: 20px;text-align: center;padding-top: 5px;margin-top: -10px;"> X </div>';
+	var dragThisStyling = {
+		"color": "white",
+		"cursor": "move",
+		"position": "absolute",
+		"margin-left": "-40px",
+		"display": "block",
+		"background": "#03589E",
+		"width": "30px",
+		"height": "20px",
+		"text-align": "center",
+		"padding-top": "5px",
+		"margin-top": "-10px"
+	};
+
+	for (var i = 0; i < draggables.length; i++) {
+		$(draggables[i]).css(styling);
+		$(draggables[i]).prepend(dragThis);
+	};
+
+	$('.dragThis').css(dragThisStyling);
+}

@@ -29,6 +29,7 @@
         "https://*/*"
       ],
       "css": [
+        "styles/bootstrap.min.css",
         "styles/main.css",
         "styles/jquery.gridster.css"
       ],

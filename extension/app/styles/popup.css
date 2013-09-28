@@ -1,0 +1,20 @@
+@import url(http://fonts.googleapis.com/css?family=Patua+One);
+
+body {
+	font-family: 'Patua One', cursive;
+	width: 300px;
+	display: block;
+	text-align: center;
+}
+
+#controls {
+	margin: 40px;
+}
+
+#controls button {
+	width: 100px;
+}
+
+.save {
+	margin-top: 30px;
+}
