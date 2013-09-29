@@ -88,6 +88,15 @@ $( document ).ready( function(){
 			exitEditMode();
 		}
 	});	
+
+	$("#groupsNav").click(function(e) {
+	    var $link = $(this).find(".dragThis");
+	    if (e.target === $link[0]) {
+    		$(this).remove();
+	    	return false;
+	    }
+	    return false;
+	});
 });
 
 function enterEditMode () {
