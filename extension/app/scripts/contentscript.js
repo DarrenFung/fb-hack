@@ -7,7 +7,26 @@ $("._li div").sortable();
 $("._li div").disableSelection();
 
 $("#pagelet_bluebar").addClass("draggable ui-widget-content");
-$("#pagelet_bluebar").draggable({ snap: "#bottomContent", snapMode: "outer", connectWith: ".widget_style", revert: "invalid"});
+
+var top = true;
+var eventFcn = function(event, ui) {
+		if( ui.position.top > 600){
+			$("#blueBar").removeClass("fixed_elem");
+			$("#blueBar").css({bottom:0, left: 0, position:"fixed", 'z-index':300, top:"", right:0});
+			$("#pagelet_bluebar").css({bottom:0, left: 0, position:"fixed", 'z-index':300, top:"", right:0});
+		} else{
+			$("#blueBar").addClass("fixed_elem");
+			$("#blueBar").css({bottom:"", left: 0, position:"fixed", 'z-index':300, top:0, right:0});
+			$("#pagelet_bluebar").css({bottom:"", left: 0, position:"fixed", 'z-index':300, top:0, right:0});
+		}
+	};
+
+$("#blueBar").draggable({ 
+	snap: "#pagelet_sidebar", snapMode: "both", connectWith: ".widget_style", stop : eventFcn
+});
+
+
+
 $("#pagelet_bluebar").disableSelection();
 
 $('#rightCol').addClass("widget_style");
@@ -19,6 +38,7 @@ $("#leftCol div").sortable({connectWith: ".widget_style"});
 $("#leftCol div").disableSelection();
 
 console.log("FB Hack Finished Loading");
+
 /*
 pagelet_bluebar
 pagelet_welcome_box
@@ -57,7 +77,8 @@ var draggables = [
 	"#pagelet_ego_pane",
 	"#pagelet_rhc_footer",
 	"#pagelet_composer",
-	"pagelet_home_stream"
+	"pagelet_home_stream",
+	"blueBar"
 ];
 
 var styling = {
