@@ -24,7 +24,7 @@ var eventFcn = function(event, ui) {
 		}
 	};
 
-$("#blueBar").draggable({ 
+$("#blueBar").draggable({
 	snap: "#pagelet_sidebar", snapMode: "both", connectWith: ".widget_style", stop : eventFcn
 });
 
@@ -127,7 +127,7 @@ $( document ).ready( function(){
 			exitEditMode();
 			window.location.reload();
 		}
-	});	
+	});
 
 	$("#groupsNav").click(function(e) {
 	    var $link = $(this).find(".dragThis");
@@ -135,7 +135,6 @@ $( document ).ready( function(){
     		$(this).remove();
 	    	return false;
 	    }
-	    return false;
 	});
 });
 
