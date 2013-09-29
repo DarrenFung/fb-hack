@@ -10,7 +10,7 @@ $("#pagelet_bluebar").addClass("draggable ui-widget-content");
 
 var top = true;
 var eventFcn = function(event, ui) {
-		if( ui.position.top > 600){
+		if( ui.position.top > 450){
 			$("#blueBar").removeClass("fixed_elem");
 			$("#blueBar").css({bottom:0, left: 0, position:"fixed", 'z-index':300, top:"", right:0});
 			$("#pagelet_bluebar").css({bottom:0, left: 0, position:"fixed", 'z-index':300, top:"", right:0});
