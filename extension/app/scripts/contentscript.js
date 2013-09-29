@@ -2,13 +2,14 @@
 
 console.log("FB Hack Started Loading");
 
+
 $("._li").addClass("widget_style");
 $("._li div").sortable();
 $("._li div").disableSelection();
 
 $("#pagelet_bluebar").addClass("draggable ui-widget-content");
 
-var top = true;
+var isEditing = false;
 var eventFcn = function(event, ui) {
 		if( ui.position.top > 450){
 			$("#blueBar").removeClass("fixed_elem");
@@ -111,12 +112,20 @@ $( document ).ready( function(){
 		console.log(sender.tab ? "from a content script:" + sender.tab.url : "from the extension");
 		if (request.action == "enter") {
 			sendResponse({farewell: "goodbye"});
-			enterEditMode();
-		}
-		if (request.action == "exit") {
+			if(isEditing){
+				exitEditMode();
+				isEditing = false;
+			} else {
+				enterEditMode();
+				isEditing = true;
+			}
+		} else if (request.action == "exit") {
 			sendResponse({farewell: "goodbye"});
 			exitEditMode();
 			saveToLocationStorage();			
+		} else if (request.action == "discard"){
+			exitEditMode();
+			window.location.reload();
 		}
 	});	
 

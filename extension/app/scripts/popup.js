@@ -23,4 +23,14 @@ $( document ).ready( function(){
 			});
 		});
 	});
+	$('#discard').click(function() {
+		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+			var data = {
+				action: "discard"
+			}
+			chrome.tabs.sendMessage(tabs[0].id, data, function(response) {
+				console.log(response.farewell);
+			});
+		});
+	});
 });
