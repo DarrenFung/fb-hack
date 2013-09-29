@@ -1,0 +1,24 @@
+<div class="side-bar-wrapper collapse navbar-collapse navbar-ex1-collapse">
+  <a href="#" class="logo hidden-sm hidden-xs">
+      <span>Admin</span>
+  </a>
+  <div class="search-box">
+      <input type="text" placeholder="SEARCH" class="form-control">
+  </div>
+  <div class="relative-w">
+      <ul class="side-menu side-menu-blue">
+        <li class="<%= flash[:popular] %>">
+          <%= link_to 'Popular Rearrangements', '/', class: flash[:popular] %>
+        </li>
+        <li class="<%= flash[:pie] %>">
+          <%= link_to 'Most Moved Widgets', '/pie', class: flash[:pie] %>
+        </li>
+        <li class="<%= flash[:age] %>">
+          <%= link_to 'Movements by Age/Gender', '/age', class: flash[:age] %>
+        </li>
+        <li class="<%= flash[:heatmap] %>">
+          <%= link_to 'Popular Areas', '/heatmap', class: flash[:heatmap] %>
+        </li>
+      </ul>
+  </div>
+</div>

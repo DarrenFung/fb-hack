@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Backend</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <link href="http://fonts.googleapis.com/css?family=Oswald:300,400,700|Open+Sans:400,700,300" rel="stylesheet" type="text/css">
+
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+<body class="body-dark-blue">
+  <div class="all-wrapper">
+      <div class="row">
+          <div class="col-md-3">
+              <div class="text-center">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+              </div>
+              <%= render 'shared/sidebar' %>
+          </div>
+          <div class="col-md-9">
+
+              <div class="content-wrapper">
+                  <div class="content-inner content-inner-beige">
+                      <div class="page-header page-header-red">
+                          <div class="header-links hidden-xs">
+                              <a href="notifications.html">User Alerts</a>
+                              <a href="#">Settings</a>
+                              <a href="#">Logout</a>
+                          </div>
+                          <h1>Dashboard</h1>
+                      </div>
+                      <div class="main-content">
+                        <%= yield %>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+</body>
+
+</html>
