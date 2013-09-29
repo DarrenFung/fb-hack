@@ -62,7 +62,10 @@
     list-style: none;
 }
 
-.widget_style { list-style-type: none; }
+.widget_style { 
+    list-style-type: none; 
+    float: center;
+}
 
 /* Uncomment this if you set helper : "clone" in draggable options */
 /*.gridster .player {
