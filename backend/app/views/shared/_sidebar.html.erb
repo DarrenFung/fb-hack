@@ -7,17 +7,17 @@
   </div>
   <div class="relative-w">
       <ul class="side-menu side-menu-blue">
-        <li class="current">
-          <%= link_to 'Popular Rearrangements', '/', class: 'current' %>
+        <li class="<%= flash[:popular] %>">
+          <%= link_to 'Popular Rearrangements', '/', class: flash[:popular] %>
         </li>
-        <li>
-          <%= link_to 'Most Moved Widgets', '/pie' %>
+        <li class="<%= flash[:pie] %>">
+          <%= link_to 'Most Moved Widgets', '/pie', class: flash[:pie] %>
         </li>
-        <li>
-          <%= link_to 'Movements by Age/Gender', '/age' %>
+        <li class="<%= flash[:age] %>">
+          <%= link_to 'Movements by Age/Gender', '/age', class: flash[:age] %>
         </li>
-        <li>
-          <%= link_to 'Popular Areas', '/heatmap' %>
+        <li class="<%= flash[:heatmap] %>">
+          <%= link_to 'Popular Areas', '/heatmap', class: flash[:heatmap] %>
         </li>
       </ul>
   </div>
