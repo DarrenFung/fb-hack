@@ -14,10 +14,12 @@ var eventFcn = function(event, ui) {
 			$("#blueBar").removeClass("fixed_elem");
 			$("#blueBar").css({bottom:0, left: 0, position:"fixed", 'z-index':300, top:"", right:0});
 			$("#pagelet_bluebar").css({bottom:0, left: 0, position:"fixed", 'z-index':300, top:"", right:0});
+			$("#globalContainer").css({"margin-top":""});
 		} else{
 			$("#blueBar").addClass("fixed_elem");
 			$("#blueBar").css({bottom:"", left: 0, position:"fixed", 'z-index':300, top:0, right:0});
 			$("#pagelet_bluebar").css({bottom:"", left: 0, position:"fixed", 'z-index':300, top:0, right:0});
+			$("#globalContainer").css({"margin-top":42});
 		}
 	};
 
