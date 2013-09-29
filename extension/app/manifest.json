@@ -25,16 +25,25 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
-        "https://*/*"
+        "http://www.facebook.com/*",
+        "https://www.facebook.com/*"
       ],
       "css": [
+        "styles/bootstrap.min.css",
         "styles/main.css",
         "styles/jquery.gridster.css"
       ],
       "js": [
         "scripts/jquery-2.0.3.js",
         "scripts/jquery.gridster.js",
+        "scripts/jquery.ui.core.js",
+        "scripts/jquery.ui.widget.js",
+        "scripts/jquery.ui.mouse.js",
+        "scripts/jquery.ui.draggable.js",
+        "scripts/jquery.ui.droppable.js",
+        "scripts/jquery.ui.resizable.js",
+        "scripts/jquery.ui.selectable.js",
+        "scripts/jquery.ui.sortable.js",
         "scripts/contentscript.js"
       ],
       "run_at": "document_end",
