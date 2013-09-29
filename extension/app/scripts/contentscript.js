@@ -75,8 +75,15 @@ var undoStyling = {
 	margin: "0"
 };
 
-// actually runs on 'edit' button click
 $( document ).ready( function(){
+
+
+	if ( getItem("saved") == "true"){
+		console.log("was saved");
+		$( "#leftCol" ).html(getItem("leftCol"));
+		$( "#rightCol" ).html(getItem("rightCol"));
+	}
+
 	chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
 		console.log(sender.tab ? "from a content script:" + sender.tab.url : "from the extension");
 		if (request.action == "enter") {
@@ -86,9 +93,52 @@ $( document ).ready( function(){
 		if (request.action == "exit") {
 			sendResponse({farewell: "goodbye"});
 			exitEditMode();
+			saveToLocationStorage();			
 		}
 	});	
 });
+
+// Store item in local storage:
+function setItem(key, value) {
+	try {
+	  console.log("Storing [" + key + ":" + value + "]");
+	  window.localStorage.removeItem(key);      // <-- Local storage!
+	  window.localStorage.setItem(key, value);  // <-- Local storage!
+	} catch(e) {
+	  console.log("Error inside setItem");
+	  console.log(e);
+	}
+	console.log("Return from setItem" + key + ":" +  value);
+}
+
+// Gets item from local storage with specified key.
+function getItem(key) {
+	var value;
+	console.log('Retrieving key [' + key + ']');
+	try {
+	  value = window.localStorage.getItem(key);  // <-- Local storage!
+	}catch(e) {
+	  console.log("Error inside getItem() for key:" + key);
+	  console.log(e);
+	  value = "null";
+	}
+	console.log("Returning value: " + value);
+	return value;
+}
+
+// Clears all key/value pairs in local storage.
+function clearStrg() {
+	console.log('about to clear local storage');
+	window.localStorage.clear(); // <-- Local storage!
+	console.log('cleared');
+}
+
+
+function saveToLocationStorage(){
+	setItem("saved","true");
+	setItem("leftCol",$( "#leftCol" ).html());
+	setItem("rightCol",$( "#rightCol" ).html());
+}
 
 function enterEditMode () {
 	// var iconUrl = chrome.extension.getURL("images/move.png");
