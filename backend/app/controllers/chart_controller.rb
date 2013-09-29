@@ -7,4 +7,16 @@ class ChartController < ApplicationController
     render 'login', layout: 'login'
   end
 
+  def rearrangements
+  end
+
+  def pie
+  end
+
+  def age
+  end
+
+  def heatmap
+  end
+
 end

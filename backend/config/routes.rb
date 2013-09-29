@@ -3,6 +3,9 @@ Backend::Application.routes.draw do
   root 'chart#index'
 
   get '/login' => 'chart#login'
+  get '/heatmap' => 'chart#heatmap'
+  get '/pie' => 'chart#pie'
+  get '/age' => 'chart#age'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

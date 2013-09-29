@@ -8,14 +8,16 @@
   <div class="relative-w">
       <ul class="side-menu side-menu-blue">
         <li class="current">
-          <a class="current">
-            App 1
-          </a>
+          <%= link_to 'Popular Rearrangements', '/', class: 'current' %>
         </li>
         <li>
-          <a href="">
-            App 2
-          </a>
+          <%= link_to 'Most Moved Widgets', '/pie' %>
+        </li>
+        <li>
+          <%= link_to 'Movements by Age/Gender', '/age' %>
+        </li>
+        <li>
+          <%= link_to 'Popular Areas', '/heatmap' %>
         </li>
       </ul>
   </div>

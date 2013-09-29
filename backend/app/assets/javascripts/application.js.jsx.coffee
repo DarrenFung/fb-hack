@@ -29,7 +29,7 @@ $ ->
       data: @props.data
 
     render: ->
-      `<canvas width="400" height="400"></canvas>`
+      `<canvas></canvas>`
 
   BarChart = React.createClass
     componentDidMount: ->
@@ -106,19 +106,18 @@ $ ->
     }
   ]
 
-
-  React.renderComponent(`<PieChart data={
-    [
-      {value: 10, color: "#F38630"},
-      {value: 13, color: "#69D2E7"},
-      {value: 19, color: "#E0E4CC"},
-      {value: 2, color: "#f326cc"},
-      {value: 6, color: "#26c30f"},
-      {value: 30, color: "#0f0aff"},
-      {value: 20, color: "#ffee22"}
-    ]
-    }/>`, chart.get(0))
-
+  if chart.length
+    React.renderComponent(`<PieChart data={
+      [
+        {value: 10, color: "#F38630"},
+        {value: 13, color: "#69D2E7"},
+        {value: 19, color: "#E0E4CC"},
+        {value: 2, color: "#f326cc"},
+        {value: 6, color: "#26c30f"},
+        {value: 30, color: "#0f0aff"},
+        {value: 20, color: "#ffee22"}
+      ]
+      }/>`, chart.get(0))
   React.renderComponent(`<BarChart labels={barChartPPLabels} datasets={barChartPPData} />`, barChartPP.get(0))
   React.renderComponent(`<BarChart labels={barChartNFLabels} datasets={barChartNFData} />`, barChartNF.get(0))
   React.renderComponent(`<BarChart labels={barChartMenuLabels} datasets={barChartMenuData} />`, barChartMenu.get(0))
