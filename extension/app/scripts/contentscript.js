@@ -61,10 +61,11 @@ var draggables = [
 ];
 
 var styling = {
-	border: "2px dashed #5A9ED6",
-	padding: "0",
-	cursor: "move",
-	margin: "5px"
+	"border": "2px dashed #5A9ED6",
+	"padding": "0",
+	"cursor": "move",
+	"margin": "-5px",
+	"margin-top": "20px"
 };
 
 var undoStyling = {
@@ -97,15 +98,13 @@ function enterEditMode () {
 	var dragThisStyling = {
 		"color": "white",
 		"cursor": "move",
-		"position": "absolute",
-		"margin-left": "-40px",
 		"display": "block",
 		"background": "#03589E",
 		"width": "30px",
 		"height": "20px",
 		"text-align": "center",
 		"padding-top": "5px",
-		"margin-top": "-10px"
+		"float": "right"
 	};
 
 	for (var i = 0; i < draggables.length; i++) {
