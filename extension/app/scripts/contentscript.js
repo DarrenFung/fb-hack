@@ -23,7 +23,7 @@ var eventFcn = function(event, ui) {
 		}
 	};
 
-$("#blueBar").draggable({ 
+$("#blueBar").draggable({
 	snap: "#pagelet_sidebar", snapMode: "both", connectWith: ".widget_style", stop : eventFcn
 });
 
@@ -116,9 +116,9 @@ $( document ).ready( function(){
 		if (request.action == "exit") {
 			sendResponse({farewell: "goodbye"});
 			exitEditMode();
-			saveToLocationStorage();			
+			saveToLocationStorage();
 		}
-	});	
+	});
 
 	$("#groupsNav").click(function(e) {
 	    var $link = $(this).find(".dragThis");
@@ -126,7 +126,6 @@ $( document ).ready( function(){
     		$(this).remove();
 	    	return false;
 	    }
-	    return false;
 	});
 });
 
